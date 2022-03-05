@@ -9,7 +9,6 @@ RUN docker-credential-gcr configure-docker
 RUN curl -fsSL "https://download.docker.com/linux/static/stable/x86_64/docker-20.10.9.tgz" | tar xz
 
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-
 RUN install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 RUN cp docker/docker /usr/local/bin/docker
