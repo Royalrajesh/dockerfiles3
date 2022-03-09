@@ -17,9 +17,9 @@ jobs:
       - name: get latest sha of 8 digits.
         run: echo "GITHUB_SHA_SHORT=$(git rev-parse HEAD | cut -c 33-40)" >> $GITHUB_ENV
 
-      - name: tag file
+      - name: tag image
         run: |
-          for file in Golang/*; do
+          for file in golang/*; do
           #docker tag $file/.
           docker tag ghcr.io/royalrajesh/dockerfiles3/golang:alpine-latest $file/.
           docker tag ghcr.io/royalrajesh/dockerfiles3/golang:alpine-${{ env.GITHUB_SHA_SHORT }} $file/.
