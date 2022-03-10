@@ -21,9 +21,9 @@ jobs:
         run: |
           for file in Golang/*; do
           
-          docker build -t ghcr.io/royalrajesh/dockerfiles3/golang-alpine:${{ env.GITHUB_SHA_SHORT }}
+          docker build -t ghcr.io/royalrajesh/dockerfiles3/golang-alpine:${{ env.GITHUB_SHA_SHORT }} $file/.
           docker tag ghcr.io/royalrajesh/dockerfiles3/golang-alpine:${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-alpine:latest
-          docker build -t ghcr.io/royalrajesh/dockerfiles3/golang-alpinefuzz:${{ env.GITHUB_SHA_SHORT }}
+          docker build -t ghcr.io/royalrajesh/dockerfiles3/golang-alpinefuzz:${{ env.GITHUB_SHA_SHORT }} $file/.
           docker tag ghcr.io/royalrajesh/dockerfiles3/golang-alpinefuzz:${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-alpinefuzz:latest
           done
 
