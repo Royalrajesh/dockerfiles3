@@ -22,9 +22,9 @@ jobs:
           for file in Golang/*; do
           
           docker build -t ghcr.io/royalrajesh/dockerfiles3/golang-alpine:${{ env.GITHUB_SHA_SHORT }} $file/.
-          docker tag ghcr.io/royalrajesh/dockerfiles3/golang-alpine:${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-alpine:alpine latest
+          docker tag ghcr.io/royalrajesh/dockerfiles3/golang-alpine:${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-alpine:alpine
           docker build -t ghcr.io/royalrajesh/dockerfiles3/golang-alpinefuzz:${{ env.GITHUB_SHA_SHORT }} $file/.
-          docker tag ghcr.io/royalrajesh/dockerfiles3/golang-alpinefuzz:${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-alpinefuzz:alpinefuzz latest
+          docker tag ghcr.io/royalrajesh/dockerfiles3/golang-alpinefuzz:${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-alpinefuzz:alpinefuzz
           done
 
       - name: Log in to the Container registry
