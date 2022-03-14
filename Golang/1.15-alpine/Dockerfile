@@ -1,5 +1,5 @@
 FROM golang:1.13-alpine
-RUN echo bjhsdfb
+
 RUN apk add --no-cache gcc musl-dev git
 RUN wget -O- -nv https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.38.0
 RUN mv /go/bin/golangci-lint /usr/local/bin/
