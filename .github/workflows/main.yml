@@ -26,29 +26,29 @@ jobs:
         run: |
           cd Golang
           for file in *; do
-          echo $file
+          $file
           if [ "$file" = 1.15-alpine ];
           then
-            echo alpine
+            alpine
             cd 1.15-alpine
             docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.15-alpine-${{ env.GITHUB_SHA_SHORT }} .
             cd ..
           elif [ "$file" = 1.15-alpine-fuzz ];
           then
-            echo alpine-fuzz
+            alpine-fuzz
             cd 1.15-alpine-fuzz
             docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.15-alpine-fuzz-${{ env.GITHUB_SHA_SHORT }} .
             cd ..
           elif [ "$file" = 1.17-alpine ];
           then
-            echo alpine
+            alpine
             cd 1.17-alpine
             docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.17-alpine-${{ env.GITHUB_SHA_SHORT }} .
             docker tag ghcr.io/royalrajesh/dockerfiles3/golang:1.17-alpine-${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang:1.17-alpine-latest
             cd ..
           elif [ "$file" = 1.17-alpine-fuzz ];
           then
-            echo alpine-fuzz
+            alpine-fuzz
             cd 1.17-alpine-fuzz
             docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.17-alpine-fuzz-${{ env.GITHUB_SHA_SHORT }} .
             docker tag ghcr.io/royalrajesh/dockerfiles3/golang:1.17-alpine-fuzz-${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang:1.17-alpine-fuzz-latest
