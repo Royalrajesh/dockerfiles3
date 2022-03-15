@@ -31,27 +31,27 @@ jobs:
           then
             echo alpine
             cd 1.15-alpine
-            docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.15-alpine ${{ env.GITHUB_SHA_SHORT }} .
+            docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.15-alpine${{ env.GITHUB_SHA_SHORT }} .
             cd ..
           elif [ "$file" = 1.15-alpine-fuzz ];
           then
             echo alpine-fuzz
             cd 1.15-alpine-fuzz
-            docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.15-alpine-fuzz ${{ env.GITHUB_SHA_SHORT }} .
+            docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.15-alpine-fuzz${{ env.GITHUB_SHA_SHORT }} .
             cd ..
           elif [ "$file" = 1.17-alpine ];
           then
             echo alpine
             cd 1.17-alpine
-            docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpine ${{ env.GITHUB_SHA_SHORT }} .
-            docker tag ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpine ${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpine ${{ env.GITHUB_SHA_SHORT }}:1.17alpinelatest
+            docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpine${{ env.GITHUB_SHA_SHORT }} .
+            docker tag ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpine${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpine${{ env.GITHUB_SHA_SHORT }}:1.17alpinelatest
             cd ..
           elif [ "$file" = 1.17-alpine-fuzz ];
           then
             echo alpine-fuzz
             cd 1.17-alpine-fuzz
-            docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpinefuzz ${{ env.GITHUB_SHA_SHORT }} .
-            docker tag ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpinefuzz ${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpinefuzz ${{ env.GITHUB_SHA_SHORT }}:1.17alpinefuzzlatest
+            docker build -t ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpinefuzz${{ env.GITHUB_SHA_SHORT }} .
+            docker tag ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpinefuzz${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang:1.17alpinefuzz${{ env.GITHUB_SHA_SHORT }}:1.17alpinefuzzlatest
             cd ..
           fi
           done
