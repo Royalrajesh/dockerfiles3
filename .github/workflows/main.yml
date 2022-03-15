@@ -44,14 +44,14 @@ jobs:
             echo alpine
             cd 1.17-alpine
             docker build -t ghcr.io/royalrajesh/dockerfiles3/golang-1.17alpine${{ env.GITHUB_SHA_SHORT }} .
-            docker tag ghcr.io/royalrajesh/dockerfiles3/golang-1.17-alpine${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-1.17-alpine:1.17alpinelatest
+            docker tag ghcr.io/royalrajesh/dockerfiles3/golang-1.17alpine${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-1.17alpine:1.17alpinelatest
             cd ..
           elif [ "$file" = 1.17-alpine-fuzz ];
           then
             echo alpine-fuzz
             cd 1.17-alpine-fuzz
             docker build -t ghcr.io/royalrajesh/dockerfiles3/golang-1.17alpinefuzz${{ env.GITHUB_SHA_SHORT }} .
-            docker tag ghcr.io/royalrajesh/dockerfiles3/golang-1.17alpinefuzz${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-1.17-alpine-fuzz:1.17alpinefuzzlatest
+            docker tag ghcr.io/royalrajesh/dockerfiles3/golang-1.17alpinefuzz${{ env.GITHUB_SHA_SHORT }} ghcr.io/royalrajesh/dockerfiles3/golang-1.17alpinefuzz:1.17alpinefuzzlatest
             cd ..
           fi
           done
