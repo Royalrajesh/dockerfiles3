@@ -55,10 +55,7 @@ jobs:
             cd ..
           fi
           done
-      # Runs a single command using the runners shell
-      - name: Log into container registry
-        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
-
+     
       - name: Login to GitHub Container registry
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
